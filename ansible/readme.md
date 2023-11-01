@@ -48,3 +48,19 @@ too old.
 - Update Rust to the latest stable version: `ansible-playbook playbook.yml --tags rustup`
 - Deploy a new version of the server: `ansible-playbook playbook.yml --tags deploy`
 - Check the status of the application: `sudo systemctl status ci-bench-runner`
+
+## Testing
+
+To deploy to a test server, copy `inventory.ini` to a new file `test-inventory.ini`, and update 
+the `ansible_host` IP address in `test-inventory.ini`.
+
+You can then deploy using:
+``bash
+ansible-playbook \
+  --inventory test-inventory.ini \
+  --user root \
+  --extra-vars 'hostname=rustls-bench.example.com' \
+  --extra-vars 'github_repo_owner=example' \
+  playbook.yml
+``
+`

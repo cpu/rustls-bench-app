@@ -64,7 +64,7 @@ fn filter() -> Targets {
         .with_target("ci_bench_runner", Level::TRACE)
         .with_target("sqlx", Level::DEBUG)
         .with_target("octocrab", Level::DEBUG)
-        .with_default(Level::INFO)
+        .with_default(Level::TRACE)
 }
 
 fn cwd() -> String {

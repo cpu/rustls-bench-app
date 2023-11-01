@@ -35,6 +35,11 @@
       name: 'rustup'
     tags:
       - 'rustup'
+  - name: 'build benchmarking application'
+    import_role:
+      name: 'build'
+    tags:
+      - 'build'
   - name: 'deploy benchmarking application'
     import_role:
       name: 'deploy'
